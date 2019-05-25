@@ -1,0 +1,35 @@
+
+<div *ngIf="quotes == undefined">
+    <mat-spinner></mat-spinner>
+</div>
+
+
+<div *ngIf="quotes != undefined">
+  <div *ngFor="let quote of quotes.contents.quotes">
+    <mat-card class="quote-card">
+      <mat-card-header>
+        <div mat-card-avatar class="quote-header-image"><mat-icon inline="true">account_circle</mat-icon></div>
+        <mat-card-title>{{quote.author}}</mat-card-title>
+        <mat-card-subtitle>{{quote.date | date:'fullDate'}}</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+        <p>
+          {{quote.quote}}
+        </p>
+        <mat-chip-list>
+          <mat-chip *ngFor="let tag of quote.tags">
+            {{tag}}
+          </mat-chip>
+        </mat-chip-list>
+      </mat-card-content>
+      <!-- <mat-card-actions>
+        <button mat-button>LIKE</button>
+        <button mat-button>SHARE</button>
+      </mat-card-actions> -->
+      <mat-card-footer>
+        {{quotes.contents.copyright}}
+      </mat-card-footer>
+    </mat-card>
+  </div>
+</div>
+
