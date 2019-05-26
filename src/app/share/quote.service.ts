@@ -7,12 +7,12 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 export class QuoteService {
 
   constructor(private http: HttpClient) { }
-  
+
   public async GetQuoteOfTheDayAsync() {
     await sleep(1000); // fake 1 second response for API
     return await this.http.get<QuoteObject>('https://quotes.rest/qod').toPromise();
   }
-  
+
 }
 
 function sleep(ms) {

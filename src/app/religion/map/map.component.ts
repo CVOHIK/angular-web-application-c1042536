@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { GeodataAntwerpService, ReligionLocationsObject } from '../../share/geodata-antwerp.service';
 
 @Component({
   selector: 'app-map',
@@ -6,9 +7,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./map.component.css']
 })
 export class MapComponent implements OnInit {
+  religionLocationsObject?: ReligionLocationsObject;
 
-  constructor() { }
+  constructor(private geodataAntwerpService:GeodataAntwerpService) { }
 
   ngOnInit() {
+    this.geodataAntwerpService.GetLocationsOfReligions()
+    .then(data => this.religionLocationsObject = data);
   }
 }

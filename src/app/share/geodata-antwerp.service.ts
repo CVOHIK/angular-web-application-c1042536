@@ -5,18 +5,20 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
   providedIn: 'root'
 })
 export class GeodataAntwerpService {
-  any: any;
 
-  constructor(private http:HttpClient) { }
+  constructor(private http: HttpClient) { }
 
-  public GetReligions() {
-    return this.http.get<any>('https://quotes.rest/qod');
+  public async GetLocationsOfReligions() {
+    await sleep(1000); // fake 1 second response for API
+    return await this.http.get<ReligionLocationsObject>('https://opendata.arcgis.com/datasets/2126bef81c6746e086f86fdca2f87446_37.geojson').toPromise();
   }
-
 }
 
+function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
 
-export interface RootObject {
+export interface ReligionLocationsObject {
   displayFieldName: string;
   fieldAliases: FieldAliases;
   geometryType: string;

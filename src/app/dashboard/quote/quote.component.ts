@@ -13,9 +13,6 @@ export class QuoteComponent implements OnInit {
     private quoteService: QuoteService) { }
 
   ngOnInit() {
-    // this.quoteService.GetQuoteOfTheDayAsync()
-      // .then(data => this.quote = data.contents.quotes[0]);
-    
     this.quoteService.GetQuoteOfTheDayAsync()
       .then(data => this.quotes = data);
   }
