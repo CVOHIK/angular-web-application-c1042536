@@ -6,6 +6,7 @@ import { ShareModule } from '../share/share.module';
 import { ReligionComponent } from './religion.component';
 import { MapComponent } from './map/map.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { AgmCoreModule } from '@agm/core';
 
 @NgModule({
   declarations: [ReligionComponent, MapComponent],
@@ -13,7 +14,10 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     CommonModule,
     ReligionRoutingModule,
     ShareModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyCpcz4zxy3kX5Ao61RezEjKkjtOKs0t9-w'
+    })
   ]
 })
 export class ReligionModule { }

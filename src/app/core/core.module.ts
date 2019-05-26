@@ -8,6 +8,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatMenuModule, MatButtonModule, MatIconModule, MatToolbarModule } from '@angular/material';
 import { HttpClientModule } from '@angular/common/http';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { AgmCoreModule } from '@agm/core';
 
 @NgModule({
   declarations: [HeaderComponent],
@@ -20,7 +21,10 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     MatIconModule,
     HttpClientModule,
     FlexLayoutModule,
-    MatToolbarModule
+    MatToolbarModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyCpcz4zxy3kX5Ao61RezEjKkjtOKs0t9-w'
+    })
   ],
   exports: [
     RouterModule,

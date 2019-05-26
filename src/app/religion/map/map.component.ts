@@ -9,6 +9,11 @@ import { GeodataAntwerpService, ReligionLocationsObject } from '../../share/geod
 export class MapComponent implements OnInit {
   religionLocationsObject?: ReligionLocationsObject;
 
+  // start in centre of Antwerp
+  lat: number = 51.2194475;
+  lng: number = 4.4024643;
+  zoom: number = 12;
+
   constructor(private geodataAntwerpService:GeodataAntwerpService) { }
 
   ngOnInit() {
