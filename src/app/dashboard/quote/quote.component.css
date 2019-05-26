@@ -1,7 +1,11 @@
 .quote-card {
     max-width: 400px;
-  }
+}
   
-  .quote-header-image {
-    font-size: 48px;
-  }
+.quote-header-image {
+   font-size: 48px;
+}
+.quote-footer {
+    text-align: right;
+    font-size: 0.7em;
+}

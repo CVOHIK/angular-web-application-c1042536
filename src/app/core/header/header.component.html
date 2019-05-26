@@ -1,6 +1,16 @@
-<button mat-button [matMenuTriggerFor]="menu">Menu</button>
-<mat-menu #menu="matMenu">
-  <button mat-menu-item>Item 1</button>
-  <button mat-menu-item>Item 2</button>
-</mat-menu>
-<hr />
+<mat-toolbar color="primary" [ngClass]="{'mat-elevation-z5' : true}">
+  <div fxLayout="row" fxLayoutGap="20px" fxLayoutAlign="start start">
+    <a [routerLink]='["/"]'>
+      <button mat-raised-button>
+        <mat-icon>home</mat-icon>
+        Home
+      </button>
+    </a>
+    <a [routerLink]='["/religion"]'>
+      <button mat-raised-button>
+        <mat-icon>map</mat-icon>
+        Religion
+      </button>
+    </a>
+  </div>
+</mat-toolbar>

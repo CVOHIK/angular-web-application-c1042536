@@ -5,8 +5,9 @@ import { CoreRoutingModule } from './core-routing.module';
 import { HeaderComponent } from './header/header.component';
 import { RouterModule } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatMenuModule, MatButtonModule, MatIconModule } from '@angular/material'
-import { HttpClientModule } from '@angular/common/http'; 
+import { MatMenuModule, MatButtonModule, MatIconModule, MatToolbarModule } from '@angular/material';
+import { HttpClientModule } from '@angular/common/http';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
   declarations: [HeaderComponent],
@@ -17,7 +18,9 @@ import { HttpClientModule } from '@angular/common/http';
     MatMenuModule,
     MatButtonModule,
     MatIconModule,
-    HttpClientModule
+    HttpClientModule,
+    FlexLayoutModule,
+    MatToolbarModule
   ],
   exports: [
     RouterModule,

@@ -9,7 +9,7 @@ export class QuoteService {
   constructor(private http: HttpClient) { }
   
   public async GetQuoteOfTheDayAsync() {
-    await sleep(2000); // fake 2 second response for API
+    await sleep(1000); // fake 1 second response for API
     return await this.http.get<QuoteObject>('https://quotes.rest/qod').toPromise();
   }
   

@@ -6,6 +6,8 @@ import { ShareModule } from '../share/share.module';
 import { DashboardComponent } from './dashboard.component';
 import { QuoteComponent } from './quote/quote.component';
 import { MatCardModule, MatChipsModule, MatIconModule, MatProgressSpinnerModule } from '@angular/material';
+import { FlexLayoutModule } from '@angular/flex-layout';
+
 
 @NgModule({
   declarations: [DashboardComponent, QuoteComponent],
@@ -16,7 +18,8 @@ import { MatCardModule, MatChipsModule, MatIconModule, MatProgressSpinnerModule 
     MatCardModule,
     MatChipsModule,
     MatIconModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    FlexLayoutModule
   ]
 })
 export class DashboardModule { }
