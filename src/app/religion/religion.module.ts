@@ -7,9 +7,10 @@ import { ReligionComponent } from './religion.component';
 import { MapComponent } from './map/map.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { AgmCoreModule } from '@agm/core';
+import { TableComponent } from './table/table.component';
 
 @NgModule({
-  declarations: [ReligionComponent, MapComponent],
+  declarations: [ReligionComponent, MapComponent, TableComponent],
   imports: [
     CommonModule,
     ReligionRoutingModule,
