@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { GeodataAntwerpService, ReligionLocationsObject } from '../../share/geodata-antwerp.service';
+import { GeodataAntwerpService } from '../../share/geodata-antwerp.service';
+import { ReligionLocationsObject } from 'src/app/share/classes/ReligionLocationsObject';
 
 @Component({
   selector: 'app-map',
@@ -7,9 +8,9 @@ import { GeodataAntwerpService, ReligionLocationsObject } from '../../share/geod
   styleUrls: ['./map.component.css']
 })
 export class MapComponent implements OnInit {
-  religionLocationsObject?: ReligionLocationsObject;
+  religionLocationsObject: ReligionLocationsObject;
 
-  // start in centre of Antwerp
+  // start in center of Antwerp
   lat: number = 51.2194475;
   lng: number = 4.4024643;
   zoom: number = 12;
@@ -17,7 +18,6 @@ export class MapComponent implements OnInit {
   constructor(private geodataAntwerpService:GeodataAntwerpService) { }
 
   ngOnInit() {
-    this.geodataAntwerpService.GetLocationsOfReligions()
-    .then(data => this.religionLocationsObject = data);
+    this.geodataAntwerpService.religionLocationsObject.subscribe(data => this.religionLocationsObject = data);
   }
 }
