@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { GeodataAntwerpService } from '../share/geodata-antwerp.service';
 
 
 @Component({
@@ -7,10 +8,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./religion.component.css']
 })
 export class ReligionComponent implements OnInit {
+  title: string = 'Sites for philosophy of life on the territory of the city of Antwerp';
 
-  constructor() { }
+  constructor(private geodataAntwerpService:GeodataAntwerpService) { }
 
   ngOnInit() {
-
+    this.geodataAntwerpService.GetLocationsOfReligions();
   }
 }
