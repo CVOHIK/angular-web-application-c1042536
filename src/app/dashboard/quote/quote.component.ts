@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { QuoteService, QuoteObject } from 'src/app/share/quote.service';
+import { QuoteService } from 'src/app/share/quote.service';
+import { QuoteObject } from 'src/app/share/classes/Quote';
 
 @Component({
   selector: 'app-quote',

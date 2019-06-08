@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { QuoteObject } from './classes/Quote';
 
 @Injectable({
   providedIn: 'root'
@@ -17,29 +18,4 @@ export class QuoteService {
 
 function sleep(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
-}
-
-export interface QuoteObject {
-  success: Success;
-  contents: Contents;
-}
-
-export interface Success {
-  total: number;
-}
-
-export interface Contents {
-  quotes: Quote[];
-  copyright: string;
-}
-
-export interface Quote {
-  quote: string;
-  author: string;
-  length: string;
-  tags: string[];
-  category: string;
-  title: string;
-  date: string;
-  id?: any;
 }
