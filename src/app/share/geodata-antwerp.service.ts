@@ -8,7 +8,7 @@ import { ReligionLocationsObject } from './classes/ReligionLocationsObject';
 })
 export class GeodataAntwerpService {
   private _religionLocationsObject = new Subject<ReligionLocationsObject>();
-  religionLocationsObject = this._religionLocationsObject.asObservable();
+  religionLocationsObject$ = this._religionLocationsObject.asObservable();
 
   constructor(private http: HttpClient) { }
 
