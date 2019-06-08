@@ -6,3 +6,6 @@ The idea was how to make a clean structure of modules and components so that the
 
 ## Lazy loading 
 Optimized the solution that only the required modules loaded with the [Lazy Loading Feature](https://angular.io/guide/lazy-loading-ngmodules).
+
+## Async/Await vs Observable
+Build the quote of the day with async/await with Promise. The religion is build with Observable.
