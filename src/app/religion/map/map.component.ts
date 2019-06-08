@@ -18,6 +18,7 @@ export class MapComponent implements OnInit {
   constructor(private geodataAntwerpService:GeodataAntwerpService) { }
 
   ngOnInit() {
-    this.geodataAntwerpService.religionLocationsObject.subscribe(data => this.religionLocationsObject = data);
+    this.geodataAntwerpService.religionLocationsObject$
+      .subscribe(data => this.religionLocationsObject = data);
   }
 }

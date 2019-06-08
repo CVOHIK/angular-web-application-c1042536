@@ -13,7 +13,7 @@ export class GeodataAntwerpService {
   constructor(private http: HttpClient) { }
 
   public GetLocationsOfReligions() {
-    this.http.get<ReligionLocationsObject>('https://opendata.arcgis.com/datasets/2126bef81c6746e086f86fdca2f87446_37.geojson')
+    this.http.get<ReligionLocationsObject>('https://geodata.antwerpen.be/arcgissql/rest/services/P_Portal/portal_publiek1/MapServer/37/query?where=1%3D1&outFields=*&outSR=4326&f=json')
       .subscribe(data => this._religionLocationsObject.next(data));
   }
 }

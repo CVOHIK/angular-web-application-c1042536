@@ -1,17 +1,16 @@
 <div *ngIf="religionLocationsObject != undefined">
   <agm-map [latitude]="lat" [zoom]="zoom" [longitude]="lng">
     <agm-marker *ngFor="let item of religionLocationsObject.features; let i = index"
-      [latitude]="item.geometry.coordinates[1]" [longitude]="item.geometry.coordinates[0]" [label]="label">
+      [latitude]="item.geometry.y" [longitude]="item.geometry.x" [label]="label">
       <agm-info-window>
-        <strong>{{item.properties.naam}}</strong>
+        <strong>{{item.attributes.naam}}</strong>
         <br />
-        {{item.properties.subtype}}
+        {{item.attributes.subtype}}
         <br /><br />
-        {{item.properties.straat}} {{item.properties.huisnummer}}
+        {{item.attributes.straat}} {{item.attributes.huisnummer}}
         <br />
-        {{item.properties.postcode}} {{item.properties.district}}
+        {{item.attributes.postcode}} {{item.attributes.district}}
       </agm-info-window>
     </agm-marker>
   </agm-map>
 </div>
-<hr />
