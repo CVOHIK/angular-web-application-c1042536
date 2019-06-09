@@ -12,8 +12,6 @@ export class FilterComponent implements OnInit {
   religionTypes: string[];
   religionSubtypes: string[];
   selectedType: string;
-
-
   religionLocationsObject: ReligionLocationsObject;
 
   constructor(private geodataAntwerpService: GeodataAntwerpService) { }
