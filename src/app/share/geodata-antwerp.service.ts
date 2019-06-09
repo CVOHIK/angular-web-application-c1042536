@@ -30,12 +30,12 @@ export class GeodataAntwerpService {
     var baseUrl: string = 'https://geodata.antwerpen.be/arcgissql/rest/services/P_Portal/portal_publiek1/MapServer/37/';
     var url: string = baseUrl + 'query?where=1%3D1&outFields=*&outSR=4326&f=json';
 
-    if (type != undefined && type.length > 1) {
+    if (type != undefined && subtype == undefined) {
       url = baseUrl + `query?where=type%20%3D%20'${type}'&outFields=*&outSR=4326&f=json`;
     }
 
-    if (subtype != undefined && subtype.length > 1) {
-      url = baseUrl + `query?where=subtype%20%3D%20'${subtype}'&outFields=*&outSR=4326&f=json`;
+    if (subtype != undefined) {
+      url = baseUrl + `query?where=type%20%3D%20'${type}'%20AND%20subtype%20%3D%20'${subtype}'&outFields=*&outSR=4326&f=json`;
     }
 
     return url;
