@@ -45,17 +45,17 @@ export class FilterComponent implements OnInit {
       );
   }
 
-  private onSelectType(event) {
+  onSelectType(event) {
     this.geodataAntwerpService.GetLocationsOfReligions(event);
     this.geodataAntwerpService.GenerateListOfSubtypes(event);
     this.selectedType = event;
   }
 
-  private onSelectSubtype(event) {
+  onSelectSubtype(event) {
     this.geodataAntwerpService.GetLocationsOfReligions(this.selectedType, event);
   }
 
-  private onSelectName(event) {
+  onSelectName(event) {
     this.geodataAntwerpService.GetReligionLocation(event);
   }
 
