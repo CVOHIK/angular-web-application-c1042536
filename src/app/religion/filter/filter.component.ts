@@ -10,6 +10,9 @@ import { ReligionLocationsObject } from 'src/app/share/classes/ReligionLocations
 
 export class FilterComponent implements OnInit {
   religionTypes: string[];
+  religionSubtypes: string[];
+
+
   religionLocationsObject: ReligionLocationsObject;
 
   constructor(private geodataAntwerpService: GeodataAntwerpService) { }
@@ -18,11 +21,20 @@ export class FilterComponent implements OnInit {
     this.geodataAntwerpService.religionTypes$
       .subscribe(data => this.religionTypes = data);
 
+    this.geodataAntwerpService.religionSubtypes$
+      .subscribe(data => this.religionSubtypes = data);
+    
     this.geodataAntwerpService.religionLocationsObject$
       .subscribe(data => this.religionLocationsObject = data)
   }
 
-  onSelect(event) {
+  onSelectType(event) {
     this.geodataAntwerpService.GetLocationsOfReligions(event);
+    this.geodataAntwerpService.GenerateListOfSubtypes(event);
   }
+
+  onSelectSubtype(event) {
+    this.geodataAntwerpService.GetLocationsOfReligionsOfSubtype(event);
+  }
+
 }

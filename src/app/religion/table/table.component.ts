@@ -14,7 +14,7 @@ export class TableComponent implements OnInit {
   dataSource = new MatTableDataSource();
 
   //hardcoded column definitions
-   displayedColumns: string[] = ['name', 'subtype', 'address', 'postcode', 'district'];
+   displayedColumns: string[] = ['name', 'address', 'postcode', 'district'];
 
   constructor(private geodataAntwerpService: GeodataAntwerpService) {
   }

@@ -1,17 +1,29 @@
-<div fxLayout="row" fxLayoutAlign="start none">
+<div fxLayout="row" fxLayoutAlign="start start" fxLayoutGap="20px">
+
+  <!-- <mat-icon>filter_list</mat-icon> -->
 
   <mat-form-field>
-    <mat-label>Religion</mat-label>
-    <mat-select (selectionChange)="onSelect($event.value)">
+    <mat-label>Religion Type</mat-label>
+    <mat-select (selectionChange)="onSelectType($event.value)">
       <mat-option *ngFor="let type of religionTypes" [value]='type'>
         {{type}}
       </mat-option>
     </mat-select>
   </mat-form-field>
 
-  <div *ngIf="religionLocationsObject != undefined">
-      <mat-chip>
-    {{ religionLocationsObject.features.length }}
+  <mat-form-field>
+    <mat-label>Religion Subtype</mat-label>
+    <mat-select (selectionChange)="onSelectSubtype($event.value)">
+      <mat-option *ngFor="let subtype of religionSubtypes" [value]='subtype'>
+        {{subtype}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-chip>
+    <div *ngIf="religionLocationsObject != undefined">
+      {{ religionLocationsObject.features.length }}
+    </div>
+
   </mat-chip>
-  </div>
 </div>
