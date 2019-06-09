@@ -20,15 +20,10 @@ export class GeodataAntwerpService {
 
   constructor(private http: HttpClient) { }
 
-  public GetLocationsOfReligions(type?: string) {
-    this.http.get<ReligionLocationsObject>(this.ConstructUrl(type, null))
+  public GetLocationsOfReligions(type?: string, subtype?: string) {
+    this.http.get<ReligionLocationsObject>(this.ConstructUrl(type, subtype))
       .subscribe(data => this._religionLocationsObject.next(data));
   }
-
-  public GetLocationsOfReligionsOfSubtype(subtype?: string) {
-    this.http.get<ReligionLocationsObject>(this.ConstructUrl(null, subtype))
-    .subscribe(data => this._religionLocationsObject.next(data));
-    }
 
   private ConstructUrl(type?: string, subtype?: string): string {
     // set defaults

@@ -11,6 +11,7 @@ import { ReligionLocationsObject } from 'src/app/share/classes/ReligionLocations
 export class FilterComponent implements OnInit {
   religionTypes: string[];
   religionSubtypes: string[];
+  selectedType: string;
 
 
   religionLocationsObject: ReligionLocationsObject;
@@ -23,7 +24,7 @@ export class FilterComponent implements OnInit {
 
     this.geodataAntwerpService.religionSubtypes$
       .subscribe(data => this.religionSubtypes = data);
-    
+
     this.geodataAntwerpService.religionLocationsObject$
       .subscribe(data => this.religionLocationsObject = data)
   }
@@ -31,10 +32,11 @@ export class FilterComponent implements OnInit {
   onSelectType(event) {
     this.geodataAntwerpService.GetLocationsOfReligions(event);
     this.geodataAntwerpService.GenerateListOfSubtypes(event);
+    this.selectedType = event;
   }
 
   onSelectSubtype(event) {
-    this.geodataAntwerpService.GetLocationsOfReligionsOfSubtype(event);
+    this.geodataAntwerpService.GetLocationsOfReligions(this.selectedType, event);
   }
 
 }
