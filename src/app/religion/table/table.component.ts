@@ -29,7 +29,6 @@ export class TableComponent implements OnInit {
         this.dataSource = new MatTableDataSource(this.religionLocationsArray);
         this.dataSource.paginator = this.paginator;
         this.dataSource.sort = this.sort;
-        console.log('test!');
       });
   } 
 
