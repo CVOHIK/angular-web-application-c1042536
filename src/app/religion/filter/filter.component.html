@@ -1,0 +1,17 @@
+<div fxLayout="row" fxLayoutAlign="start none">
+
+  <mat-form-field>
+    <mat-label>Religion</mat-label>
+    <mat-select (selectionChange)="onSelect($event.value)">
+      <mat-option *ngFor="let type of religionTypes" [value]='type'>
+        {{type}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <div *ngIf="religionLocationsObject != undefined">
+      <mat-chip>
+    {{ religionLocationsObject.features.length }}
+  </mat-chip>
+  </div>
+</div>

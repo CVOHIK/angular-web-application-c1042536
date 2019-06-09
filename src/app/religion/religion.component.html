@@ -1,5 +1,10 @@
-<div fxLayout="column" fxLayoutAlign="center center">
-    <h1>{{title}}</h1>
-    <app-map></app-map>
-    <app-table></app-table>
-</div>
+<h1>{{title}}</h1>
+<app-filter></app-filter>
+<mat-tab-group>
+    <mat-tab label="Map">
+        <app-map></app-map>
+    </mat-tab>
+    <mat-tab label="Table">
+        <app-table></app-table>
+    </mat-tab>
+</mat-tab-group>
