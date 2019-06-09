@@ -8,8 +8,9 @@ import { MapComponent } from './map/map.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { AgmCoreModule } from '@agm/core';
 import { TableComponent } from './table/table.component';
-import { MatTableModule, MatPaginatorModule, MatSortModule, MatFormFieldModule, MatInputModule, MatSelectModule, MatTabsModule, MatChipsModule } from '@angular/material';
+import { MatTableModule, MatPaginatorModule, MatSortModule, MatFormFieldModule, MatInputModule, MatSelectModule, MatTabsModule, MatChipsModule, MatAutocompleteModule } from '@angular/material';
 import { FilterComponent } from './filter/filter.component';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [ReligionComponent, MapComponent, TableComponent, FilterComponent],
@@ -28,7 +29,10 @@ import { FilterComponent } from './filter/filter.component';
     MatInputModule,
     MatSelectModule,
     MatChipsModule,    
-    MatTabsModule
+    MatTabsModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatAutocompleteModule
     
   ]
 })
