@@ -19,8 +19,8 @@ export class TableComponent implements OnInit {
   constructor(private geodataAntwerpService: GeodataAntwerpService) {
   }
 
-  @ViewChild(MatPaginator) paginator: MatPaginator;
-  @ViewChild(MatSort) sort: MatSort;
+  @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
+  @ViewChild(MatSort, { static: true }) sort: MatSort;
 
   ngOnInit() {
     this.geodataAntwerpService.religionLocationsObject$
