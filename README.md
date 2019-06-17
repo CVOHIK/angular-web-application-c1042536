@@ -1,4 +1,4 @@
-# AntwerpDigital
+# AntwerpDigital by Arthur van de Vondervoort
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.7 and upgraded to version 8.0.2.
 
 ## Structure
